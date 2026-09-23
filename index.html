@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Carontum — Portafolio</title>
+  <meta name="description" content="Portafolio de Carontum: launchers de Minecraft en C++/Qt6, un navegador sobre Chromium, plataformas de hosting con cobro automático y apps web con Supabase.">
+  <meta name="theme-color" content="#09090b">
+  <meta property="og:title" content="Carontum — Portafolio">
+  <meta property="og:description" content="Launchers, navegadores, bancos virtuales y plataformas de hosting. Del C++/Qt6 al Next.js.">
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/228751427?v=4">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div class="progress" id="progress"></div>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow" aria-hidden="true"></div>
+  <canvas class="bg-particles" id="particles" aria-hidden="true"></canvas>
+
+  <header class="nav" id="nav">
+    <a class="brand" href="#top" aria-label="Inicio">
+      <span class="brand-block" aria-hidden="true"></span>
+      <span class="pixel">carontum</span>
+    </a>
+    <nav class="nav-links" aria-label="Secciones">
+      <a href="#destacados">Proyectos</a>
+      <a href="#actividad">Actividad</a>
+      <a href="#trayectoria">Trayectoria</a>
+      <a href="#servicios">Servicios</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="kbd-btn" id="openPalette" aria-label="Buscar (Ctrl K)">
+        <i data-lucide="search"></i><span>Buscar</span><kbd>⌘K</kbd>
+      </button>
+      <a class="icon-btn" href="https://github.com/carontumrotumero" target="_blank" rel="noopener" aria-label="GitHub"><i data-lucide="github"></i></a>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-copy">
+        <a class="pill" href="#servicios">
+          <span class="dot"></span><span class="pixel">Disponible para proyectos</span><i data-lucide="arrow-right"></i>
+        </a>
+        <h1 class="hero-title">
+          <span class="line"><span>Construyo software</span></span>
+          <span class="line"><span>que la gente <em class="grad">usa</em>.</span></span>
+        </h1>
+        <p class="hero-sub">Soy <strong>Carontum</strong>. Hago launchers de Minecraft en <b>C++/Qt6</b>, un navegador sobre <b>Chromium</b>, plataformas de hosting que se cobran y se aprovisionan solas, y apps web en tiempo real con <b>Supabase</b>.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="#destacados"><i data-lucide="layers"></i>Ver proyectos</a>
+          <a class="btn btn-ghost" href="https://github.com/carontumrotumero" target="_blank" rel="noopener"><i data-lucide="github"></i>@carontumrotumero</a>
+        </div>
+        <dl class="stats" id="stats">
+          <div><dt>Repositorios</dt><dd><span data-count="17">0</span></dd></div>
+          <div><dt>Commits</dt><dd><span data-count="157">0</span></dd></div>
+          <div><dt>Lenguajes</dt><dd><span data-count="11">0</span></dd></div>
+          <div><dt>Apps de escritorio</dt><dd><span data-count="3">0</span></dd></div>
+        </dl>
+      </div>
+
+      <div class="hero-art" aria-hidden="true">
+        <div class="scene" id="scene">
+          <div class="cube" id="cube">
+            <div class="face f-front"></div><div class="face f-back"></div>
+            <div class="face f-right"></div><div class="face f-left"></div>
+            <div class="face f-top"></div><div class="face f-bottom"></div>
+          </div>
+          <div class="cube-shadow"></div>
+        </div>
+        <div class="terminal" id="terminal">
+          <div class="term-bar"><span></span><span></span><span></span><em>zsh — carontum</em></div>
+          <pre class="term-body" id="termBody"></pre>
+        </div>
+        <div class="float-chip c1"><i data-lucide="cpu"></i>C++17 · Qt6</div>
+        <div class="float-chip c2"><i data-lucide="database"></i>Supabase</div>
+        <div class="float-chip c3"><i data-lucide="atom"></i>React · Next.js</div>
+      </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <section class="marquee" aria-label="Tecnologías">
+      <div class="marquee-track" id="marquee"></div>
+    </section>
+
+    <!-- DESTACADOS -->
+    <section class="section" id="destacados">
+      <header class="section-head">
+        <span class="eyebrow pixel">01 · Proyectos destacados</span>
+        <h2>Lo que más orgullo me da</h2>
+        <p>Software real, publicado y usado: apps de escritorio con instaladores para tres sistemas, plataformas con pagos y bases de datos en tiempo real.</p>
+      </header>
+      <div class="bento" id="bento"></div>
+    </section>
+
+    <!-- TODOS -->
+    <section class="section" id="proyectos">
+      <header class="section-head">
+        <span class="eyebrow pixel">02 · Todos los repositorios</span>
+        <h2>Públicos y privados, uno a uno</h2>
+        <p>Cada tarjeta resume lo que hay dentro del repo. Los privados no enlazan al código, pero sí a su web cuando está en vivo.</p>
+      </header>
+      <div class="toolbar">
+        <div class="filters" id="filters" role="tablist"></div>
+        <label class="search">
+          <i data-lucide="search"></i>
+          <input id="search" type="search" placeholder="Filtrar por nombre o tecnología…" autocomplete="off">
+        </label>
+      </div>
+      <div class="grid" id="grid"></div>
+      <p class="empty" id="empty" hidden>Nada coincide con esa búsqueda.</p>
+    </section>
+
+    <!-- ACTIVIDAD -->
+    <section class="section" id="actividad">
+      <header class="section-head">
+        <span class="eyebrow pixel">03 · Actividad</span>
+        <h2>Un año de commits</h2>
+        <p>Contribuciones de los últimos 12 meses y el reparto de código por lenguaje en todos los repositorios.</p>
+      </header>
+      <div class="activity">
+        <div class="card heat-card">
+          <div class="card-head"><h3><i data-lucide="activity"></i>Contribuciones</h3><span class="muted" id="heatTotal"></span></div>
+          <div class="heat-wrap"><div class="heat" id="heat"></div></div>
+          <div class="heat-legend"><span>Menos</span><i class="l0"></i><i class="l1"></i><i class="l2"></i><i class="l3"></i><i class="l4"></i><span>Más</span></div>
+        </div>
+        <div class="card lang-card">
+          <div class="card-head"><h3><i data-lucide="code-2"></i>Lenguajes</h3><span class="muted">por bytes de código</span></div>
+          <div class="lang-bar" id="langBar"></div>
+          <ul class="lang-list" id="langList"></ul>
+        </div>
+        <div class="card month-card">
+          <div class="card-head"><h3><i data-lucide="bar-chart-3"></i>Por mes</h3><span class="muted">2026</span></div>
+          <div class="months" id="months"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRAYECTORIA -->
+    <section class="section" id="trayectoria">
+      <header class="section-head">
+        <span class="eyebrow pixel">04 · Trayectoria</span>
+        <h2>De una plantilla de Next.js a un launcher en C++</h2>
+        <p>Nueve meses en los que cada proyecto subió un poco el listón del anterior.</p>
+      </header>
+      <div class="timeline"><div class="tl-line" aria-hidden="true"><div class="tl-fill" id="tlFill"></div></div><ol id="timeline"></ol></div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section class="section" id="servicios">
+      <header class="section-head">
+        <span class="eyebrow pixel">05 · Servicios</span>
+        <h2>¿Tienes un proyecto?</h2>
+        <p>Además de estudiar Sistemas Microinformáticos y Redes, llevo mi propio negocio de servicios tecnológicos.</p>
+      </header>
+      <div class="services" id="services"></div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="cta" id="contacto">
+      <div class="cta-inner">
+        <div class="cta-blocks" aria-hidden="true" id="ctaBlocks"></div>
+        <span class="eyebrow pixel">06 · Contacto</span>
+        <h2>Hablemos de lo que quieres construir</h2>
+        <p>Escríbeme por GitHub o revisa el código de cualquier proyecto público.</p>
+        <div class="hero-ctas center">
+          <a class="btn btn-primary" href="https://github.com/carontumrotumero" target="_blank" rel="noopener"><i data-lucide="github"></i>Ir a mi GitHub</a>
+          <a class="btn btn-ghost" href="#top"><i data-lucide="arrow-up"></i>Volver arriba</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span class="pixel">© 2026 carontum</span>
+    <span class="muted">Hecho a mano con GSAP, Lucide y la fuente Monocraft · Publicado en GitHub Pages</span>
+  </footer>
+
+  <!-- Modal de proyecto -->
+  <dialog class="modal" id="modal" aria-labelledby="mTitle">
+    <div class="modal-inner" id="modalInner"></div>
+  </dialog>
+
+  <!-- Paleta de comandos -->
+  <dialog class="palette" id="palette" aria-label="Paleta de comandos">
+    <div class="palette-inner">
+      <label class="palette-input"><i data-lucide="search"></i><input id="paletteInput" placeholder="Busca un proyecto, sección o tecnología…" autocomplete="off"><kbd>esc</kbd></label>
+      <ul class="palette-list" id="paletteList" role="listbox"></ul>
+      <div class="palette-foot"><span><kbd>↑</kbd><kbd>↓</kbd> navegar</span><span><kbd>↵</kbd> abrir</span></div>
+    </div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/Flip.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+  <script src="assets/data.js"></script>
+  <script src="assets/contrib.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
