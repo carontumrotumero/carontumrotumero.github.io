@@ -44,6 +44,24 @@ window.PROJECTS = [
     links: [{ label: "Repositorio", url: "https://github.com/carontumrotumero/Voxelix", icon: "github" }, { label: "Descargas", url: "https://github.com/carontumrotumero/Voxelix/releases/latest", icon: "download" }]
   },
   {
+    id: "tflclient", repo: "TFLClient", title: "TFL Client", icon: "gamepad-2", accent: "#38bdf8",
+    tagline: "Launcher de Minecraft encargado por un estudio, en Rust + Tauri",
+    desc: "Launcher de escritorio hecho a medida para un cliente: backend en Rust sobre Tauri 2 y frontend en Svelte 5. Gestión de instancias, mods, modpacks, shaders y resource packs, con auto-actualización y un instalador propio para Windows, macOS y Linux.",
+    cats: ["escritorio", "minecraft", "cliente"], wip: true, featured: true, size: "lg",
+    langs: { Rust: 484104, Svelte: 197872, TypeScript: 25931, CSS: 19399, Java: 3997, Shell: 2894, JavaScript: 1532 },
+    commits: 74, created: "2026-09-13", updated: "2026-09-23", version: "v0.9.12",
+    stack: ["Rust", "Tauri 2", "Svelte 5", "SvelteKit", "TypeScript", "Vite", "GitHub Actions"],
+    features: [
+      "Gestión de instancias, mods, modpacks, shaders y resource packs desde un mismo panel",
+      "Paleta de comandos, onboarding guiado y personalización de iconos por instancia",
+      "Auto-actualización en segundo plano con badge de aviso",
+      "Instalador propio en español para Windows y macOS, y script de un comando para Linux (detecta apt/dnf/AppImage)",
+      "Exportación, backup e integridad de instancias, con diagnóstico offline",
+      "Más de 70 commits en poco más de una semana, con changelog detallado por función"
+    ],
+    links: []
+  },
+  {
     id: "umbrathel-web", repo: "umbrathel-web", title: "Umbrathel Web", icon: "globe", accent: "#a78bfa",
     tagline: "Navegador de escritorio sobre Chromium con estética Liquid Glass",
     desc: "Un navegador completo construido con Electron: pestañas aisladas con WebContentsView, perfiles, apps ancladas estilo Discord, paleta de comandos, vista dividida y un asistente de IA local con Ollama. Va por la versión 0.10.",
@@ -225,7 +243,7 @@ window.TIMELINE = [
   { date: "Abr 2026", title: "React 19 + Tailwind v4", text: "Banco Estelar: el primer proyecto con TypeScript estricto, funciones RPC y Tailwind v4.", ids: ["banco-estelar"] },
   { date: "May – Jun 2026", title: "El ecosistema de Umbrathel", text: "Banco de Umbrathel con bot de Discord y Umbrathel Client, un launcher de Minecraft con 10 versiones publicadas.", ids: ["banco-umbrathel", "umbrathel-client"] },
   { date: "Jul – Ago 2026", title: "Un navegador propio y el salto a C++", text: "Nace Umbrathel Web sobre Chromium, llega el primer cliente real (Studios MV) y arranca Voxelix en C++17 / Qt6.", ids: ["umbrathel-web", "studiosmv", "voxelix"] },
-  { date: "Sep 2026", title: "Producción y negocio", text: "NetherCore automatiza cobros y servidores, Voxelix publica builds para 3 sistemas, Umbrathel Web llega a la 0.10 y la clase usa su horario en tiempo real.", ids: ["nethercore", "voxelix", "umbrathel-web", "horario"] }
+  { date: "Sep 2026", title: "Producción y negocio", text: "NetherCore automatiza cobros y servidores, Voxelix publica builds para 3 sistemas, Umbrathel Web llega a la 0.10, la clase usa su horario en tiempo real y llega el primer encargo grande: un launcher en Rust y Tauri para un estudio.", ids: ["nethercore", "voxelix", "umbrathel-web", "horario", "tflclient"] }
 ];
 
 window.SERVICES = [

@@ -52,7 +52,9 @@
   $("#marquee").innerHTML = [...TECH, ...TECH].map(t => `<span>${t}</span>`).join("");
 
   /* ---------- Helpers de tarjetas ---------- */
-  const privacyBadge = p => p.hidden
+  const privacyBadge = p => p.wip
+    ? `<span class="badge int"><i data-lucide="hammer"></i>En desarrollo</span>`
+    : p.hidden
     ? `<span class="badge int"><i data-lucide="users"></i>Uso interno</span>`
     : p.private ? `<span class="badge priv"><i data-lucide="lock"></i>Privado</span>`
       : `<span class="badge pub"><i data-lucide="globe"></i>Público</span>`;
@@ -74,7 +76,7 @@
   }
 
   /* ---------- Bento destacados ---------- */
-  const FEATURED = [["voxelix", "xl"], ["umbrathel-web", "xl"], ["nethercore", "lg"], ["umbrathel-client", "md"], ["banco-umbrathel", "md"], ["horario", "md"], ["studiosmv", "md"]];
+  const FEATURED = [["voxelix", "xl"], ["umbrathel-web", "xl"], ["tflclient", "lg"], ["nethercore", "lg"], ["umbrathel-client", "md"], ["banco-umbrathel", "md"], ["horario", "md"], ["studiosmv", "md"]];
   $("#bento").innerHTML = FEATURED.map(([id, size]) => {
     const p = byId[id];
     return `<article class="card p-card size-${size} reveal" data-id="${p.id}" style="--accent:${p.accent}" tabindex="0" role="button" aria-label="Ver detalles de ${esc(p.title)}">
@@ -174,7 +176,8 @@
         <div><h4>Stack</h4><div class="p-stack" style="margin:0">${p.stack.map(s => `<span class="chip">${esc(s)}</span>`).join("")}</div></div>
         ${tot ? `<div class="m-langs"><h4 style="margin:0">Lenguajes</h4>${langBar(p.langs)}<ul>${Object.entries(p.langs).sort((a, b) => b[1] - a[1]).map(([k, v]) => `<li><i style="background:${LANG_COLOR[k] || "#71717a"}"></i>${k} <span>${(v / tot * 100).toFixed(1)}%</span></li>`).join("")}</ul></div>` : ""}
         ${p.links.length ? `<div class="m-links">${p.links.map((l, i) => `<a class="btn ${i ? "btn-ghost" : "btn-primary"}" href="${l.url}" target="_blank" rel="noopener"><i data-lucide="${l.icon}"></i>${esc(l.label)}</a>`).join("")}</div>` : ""}
-        ${p.hidden ? `<div class="m-note"><i data-lucide="shield"></i><span>Es una herramienta interna para mi clase, así que no enlazo ni el repositorio ni la web.</span></div>`
+        ${p.wip ? `<div class="m-note"><i data-lucide="hammer"></i><span>Todavía en desarrollo para el cliente, así que de momento no enlazo el repositorio.</span></div>`
+          : p.hidden ? `<div class="m-note"><i data-lucide="shield"></i><span>Es una herramienta interna para mi clase, así que no enlazo ni el repositorio ni la web.</span></div>`
           : p.private ? `<div class="m-note"><i data-lucide="lock"></i><span>El código de este repositorio es privado${p.links.length ? ", pero la web está en vivo" : ""}.</span></div>` : ""}
       </div>`;
     icons();
