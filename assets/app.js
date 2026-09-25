@@ -76,7 +76,7 @@
   }
 
   /* ---------- Bento destacados ---------- */
-  const FEATURED = [["voxelix", "xl"], ["umbrathel-web", "xl"], ["tflclient", "lg"], ["nethercore", "lg"], ["umbrathel-client", "md"], ["banco-umbrathel", "md"], ["horario", "md"], ["studiosmv", "md"]];
+  const FEATURED = [["voxelix", "xl"], ["umbrathel-web", "xl"], ["tflclient", "lg"], ["bot-umbrathel", "lg"], ["nethercore", "lg"], ["umbrathel-client", "md"], ["banco-umbrathel", "md"], ["horario", "md"], ["studiosmv", "md"]];
   $("#bento").innerHTML = FEATURED.map(([id, size]) => {
     const p = byId[id];
     return `<article class="card p-card size-${size} reveal" data-id="${p.id}" style="--accent:${p.accent}" tabindex="0" role="button" aria-label="Ver detalles de ${esc(p.title)}">
@@ -87,7 +87,7 @@
       <p class="p-desc">${esc(p.desc)}</p>
       <div class="p-stack">${p.stack.slice(0, size === "md" ? 3 : size === "lg" ? 6 : 5).map(s => `<span class="chip">${esc(s)}</span>`).join("")}</div>
       <div class="p-foot">
-        <div class="p-meta"><span><i data-lucide="git-commit-horizontal"></i>${p.commits} commits</span><span><i data-lucide="code-2"></i>${mainLang(p)}</span><span><i data-lucide="clock-3"></i>${fmtDate(p.updated)}</span></div>
+        <div class="p-meta">${p.commits ? `<span><i data-lucide="git-commit-horizontal"></i>${p.commits} commits</span>` : `<span><i data-lucide="folder"></i>${p.files} archivos</span>`}<span><i data-lucide="code-2"></i>${mainLang(p)}</span><span><i data-lucide="clock-3"></i>${fmtDate(p.updated)}</span></div>
         ${langBar(p.langs)}
         <span class="p-more">Ver detalles<i data-lucide="arrow-right"></i></span>
       </div>
@@ -103,7 +103,7 @@
   grid.innerHTML = ORDER.map(p => `<article class="card r-card" data-id="${p.id}" style="--accent:${p.accent}" tabindex="0" role="button" aria-label="Ver detalles de ${esc(p.title)}">
       <div class="r-top"><div class="p-icon"><i data-lucide="${p.icon}"></i></div><div><h4>${esc(p.title)}</h4><small>${esc(p.repo)}</small></div><div class="badges">${privacyBadge(p)}</div></div>
       <p>${esc(p.tagline)}. ${esc(p.desc)}</p>
-      <div class="p-meta"><span><i data-lucide="git-commit-horizontal"></i>${p.commits}</span><span><i data-lucide="code-2"></i>${mainLang(p)}</span><span><i data-lucide="clock-3"></i>${fmtDate(p.updated)}</span></div>
+      <div class="p-meta">${p.commits ? `<span><i data-lucide="git-commit-horizontal"></i>${p.commits}</span>` : `<span><i data-lucide="folder"></i>${p.files} archivos</span>`}<span><i data-lucide="code-2"></i>${mainLang(p)}</span><span><i data-lucide="clock-3"></i>${fmtDate(p.updated)}</span></div>
       ${langBar(p.langs)}
     </article>`).join("");
   const fbox = $("#filters");
@@ -167,7 +167,7 @@
       <div class="m-body">
         <p>${esc(p.desc)}</p>
         <div class="m-grid">
-          <div class="m-stat"><small>Commits</small><b>${p.commits}</b></div>
+          <div class="m-stat"><small>${p.commits ? "Commits" : "Archivos"}</small><b>${p.commits || p.files}</b></div>
           <div class="m-stat"><small>Lenguaje principal</small><b>${mainLang(p)}</b></div>
           <div class="m-stat"><small>Creado</small><b>${fmtDate(p.created)}</b></div>
           <div class="m-stat"><small>Último push</small><b>${fmtDate(p.updated)}</b></div>
@@ -178,6 +178,7 @@
         ${p.links.length ? `<div class="m-links">${p.links.map((l, i) => `<a class="btn ${i ? "btn-ghost" : "btn-primary"}" href="${l.url}" target="_blank" rel="noopener"><i data-lucide="${l.icon}"></i>${esc(l.label)}</a>`).join("")}</div>` : ""}
         ${p.wip ? `<div class="m-note"><i data-lucide="hammer"></i><span>Todavía en desarrollo para el cliente, así que de momento no enlazo el repositorio.</span></div>`
           : p.hidden ? `<div class="m-note"><i data-lucide="shield"></i><span>Es una herramienta interna para mi clase, así que no enlazo ni el repositorio ni la web.</span></div>`
+          : p.local ? `<div class="m-note"><i data-lucide="hard-drive"></i><span>Vive en un servidor propio, no en GitHub, así que no hay repositorio público que enlazar.</span></div>`
           : p.private ? `<div class="m-note"><i data-lucide="lock"></i><span>El código de este repositorio es privado${p.links.length ? ", pero la web está en vivo" : ""}.</span></div>` : ""}
       </div>`;
     icons();

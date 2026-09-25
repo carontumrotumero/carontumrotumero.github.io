@@ -62,6 +62,24 @@ window.PROJECTS = [
     links: []
   },
   {
+    id: "bot-umbrathel", repo: "Bot verificador", title: "Bot de Umbrathel", icon: "bot", accent: "#22c55e",
+    tagline: "El bot de Discord que hace funcionar todo el reino",
+    desc: "Bot de Discord en Node.js que verifica cuentas de Minecraft (por código de perfil o Hypixel) y además gobierna toda la vida del servidor: economía, tickets, rangos del reino, un asistente de IA propio y hasta un plugin de Spigot que habla con él.",
+    cats: ["backend", "umbrathel", "ia"], private: true, local: true, featured: true, size: "lg",
+    langs: { JavaScript: 1074285, Java: 4628 },
+    commits: 0, files: 130, created: "2026-06-01", updated: "2026-09-24",
+    stack: ["Node.js", "discord.js 14", "SQLite (better-sqlite3)", "Supabase", "Java / Spigot", "PDFKit", "canvacord", "Google Sheets API", "Web Push"],
+    features: [
+      "Verificación de cuentas de Minecraft por código de perfil o por la API de Hypixel, con rate limiting propio a la API de Mojang",
+      "69 comandos slash y de moderación: economía, préstamos, subastas, impuestos, matrimonios, censo, alianzas entre reinos...",
+      "Asistente de IA propio (NVIDIA NIM + Nemotron) para tickets de soporte y para responder preguntas del servidor",
+      "Sistema de tickets con transcripciones, informes semanales en PDF y tarjetas de bienvenida generadas al vuelo",
+      "Plugin de Spigot en Java (DiscordVerify) que conecta el servidor de Minecraft con la verificación del bot",
+      "Publicación automática del calendario litúrgico (la Biblia de Umbrathel) y páginas web propias de banco, noticias y estado del servidor"
+    ],
+    links: []
+  },
+  {
     id: "umbrathel-web", repo: "umbrathel-web", title: "Umbrathel Web", icon: "globe", accent: "#a78bfa",
     tagline: "Navegador de escritorio sobre Chromium con estética Liquid Glass",
     desc: "Un navegador completo construido con Electron: pestañas aisladas con WebContentsView, perfiles, apps ancladas estilo Discord, paleta de comandos, vista dividida y un asistente de IA local con Ollama. Va por la versión 0.10.",
@@ -241,7 +259,7 @@ window.TIMELINE = [
   { date: "Ene 2026", title: "Primeros pasos con Next.js y Express", text: "Primeros despliegues en Vercel: un dashboard con Next.js 15 + shadcn/ui y un backend Express serverless.", ids: ["admin-dash", "express-vercel"] },
   { date: "Feb – Mar 2026", title: "Backends reales con Supabase", text: "Aethelgard (tienda de rangos) y Vanaco Working Force: login propio, roles, sesiones y esquemas SQL. 30 commits en una semana.", ids: ["aethelgard", "vanaco"] },
   { date: "Abr 2026", title: "React 19 + Tailwind v4", text: "Banco Estelar: el primer proyecto con TypeScript estricto, funciones RPC y Tailwind v4.", ids: ["banco-estelar"] },
-  { date: "May – Jun 2026", title: "El ecosistema de Umbrathel", text: "Banco de Umbrathel con bot de Discord y Umbrathel Client, un launcher de Minecraft con 10 versiones publicadas.", ids: ["banco-umbrathel", "umbrathel-client"] },
+  { date: "May – Jun 2026", title: "El ecosistema de Umbrathel", text: "El bot de Discord que gobierna todo el reino, Banco de Umbrathel conectado a él, y Umbrathel Client, un launcher de Minecraft con 10 versiones publicadas.", ids: ["bot-umbrathel", "banco-umbrathel", "umbrathel-client"] },
   { date: "Jul – Ago 2026", title: "Un navegador propio y el salto a C++", text: "Nace Umbrathel Web sobre Chromium, llega el primer cliente real (Studios MV) y arranca Voxelix en C++17 / Qt6.", ids: ["umbrathel-web", "studiosmv", "voxelix"] },
   { date: "Sep 2026", title: "Producción y negocio", text: "NetherCore automatiza cobros y servidores, Voxelix publica builds para 3 sistemas, Umbrathel Web llega a la 0.10, la clase usa su horario en tiempo real y llega el primer encargo grande: un launcher en Rust y Tauri para un estudio.", ids: ["nethercore", "voxelix", "umbrathel-web", "horario", "tflclient"] }
 ];
