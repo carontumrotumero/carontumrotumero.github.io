@@ -15,22 +15,26 @@
   /* ---------- Texturas pixel (bloque de hierba) ---------- */
   function rng(seed) { return () => (seed = (seed * 16807) % 2147483647) / 2147483647; }
   function texture(kind, seed = 7) {
-    const c = document.createElement("canvas"); c.width = c.height = 16;
-    const x = c.getContext("2d"), r = rng(seed);
-    const grass = ["#5fae3a", "#6cc04a", "#4f9a2f", "#7ccf55", "#58a735"];
-    const dirt = ["#8a5a33", "#7a4e2b", "#6b4424", "#976540", "#5e3b1f"];
-    for (let i = 0; i < 16; i++) for (let j = 0; j < 16; j++) {
-      let pal = dirt;
-      if (kind === "top") pal = grass;
-      if (kind === "side") { const edge = 3 + Math.floor(r() * 2.2); if (j < edge) pal = grass; }
-      x.fillStyle = pal[Math.floor(r() * pal.length)]; x.fillRect(i, j, 1, 1);
-    }
-    return c.toDataURL();
+    try {
+      const c = document.createElement("canvas"); c.width = c.height = 16;
+      const x = c.getContext("2d"), r = rng(seed);
+      if (!x) return null;
+      const grass = ["#5fae3a", "#6cc04a", "#4f9a2f", "#7ccf55", "#58a735"];
+      const dirt = ["#8a5a33", "#7a4e2b", "#6b4424", "#976540", "#5e3b1f"];
+      for (let i = 0; i < 16; i++) for (let j = 0; j < 16; j++) {
+        let pal = dirt;
+        if (kind === "top") pal = grass;
+        if (kind === "side") { const edge = 3 + Math.floor(r() * 2.2); if (j < edge) pal = grass; }
+        x.fillStyle = pal[Math.floor(r() * pal.length)]; x.fillRect(i, j, 1, 1);
+      }
+      return c.toDataURL();
+    } catch { return null; }
   }
   const TEX = { top: texture("top", 11), side: texture("side", 23), bottom: texture("bottom", 5) };
+  const FALLBACK_BG = { top: "#5fae3a", side: "#8a5a33", bottom: "#5e3b1f" };
   $$(".face").forEach(f => {
     const k = f.classList.contains("f-top") ? "top" : f.classList.contains("f-bottom") ? "bottom" : "side";
-    f.style.backgroundImage = `url(${TEX[k]})`;
+    if (TEX[k]) f.style.backgroundImage = `url(${TEX[k]})`; else f.style.background = FALLBACK_BG[k];
   });
   const cta = $("#ctaBlocks");
   if (cta) {
@@ -286,21 +290,25 @@
   ["destacados", "proyectos", "actividad", "trayectoria", "servicios"].forEach(id => io.observe(document.getElementById(id)));
 
   /* ---------- Partículas pixel ---------- */
-  const cv = $("#particles"), ctx = cv.getContext("2d");
-  let W, H, parts = [];
-  const resize = () => { const d = Math.min(devicePixelRatio || 1, 2); W = cv.width = innerWidth * d; H = cv.height = innerHeight * d; };
-  resize(); addEventListener("resize", resize);
-  const COLS = ["74,222,128", "167,139,250", "250,204,21"];
-  for (let i = 0; i < (innerWidth < 720 ? 18 : 36); i++) parts.push({ x: Math.random(), y: Math.random(), s: 2 + Math.random() * 3, v: .00008 + Math.random() * .00025, c: COLS[i % 3], a: .15 + Math.random() * .35 });
-  (function loop() {
-    ctx.clearRect(0, 0, W, H);
-    const d = Math.min(devicePixelRatio || 1, 2);
-    for (const p of parts) {
-      if (!reduced) { p.y -= p.v; if (p.y < -0.02) { p.y = 1.02; p.x = Math.random(); } }
-      ctx.fillStyle = `rgba(${p.c},${p.a})`; ctx.fillRect(Math.round(p.x * W), Math.round(p.y * H), p.s * d, p.s * d);
+  try {
+    const cv = $("#particles"), ctx = cv.getContext("2d");
+    if (ctx) {
+      let W, H, parts = [];
+      const resize = () => { const d = Math.min(devicePixelRatio || 1, 2); W = cv.width = innerWidth * d; H = cv.height = innerHeight * d; };
+      resize(); addEventListener("resize", resize);
+      const COLS = ["74,222,128", "167,139,250", "250,204,21"];
+      for (let i = 0; i < (innerWidth < 720 ? 18 : 36); i++) parts.push({ x: Math.random(), y: Math.random(), s: 2 + Math.random() * 3, v: .00008 + Math.random() * .00025, c: COLS[i % 3], a: .15 + Math.random() * .35 });
+      (function loop() {
+        ctx.clearRect(0, 0, W, H);
+        const d = Math.min(devicePixelRatio || 1, 2);
+        for (const p of parts) {
+          if (!reduced) { p.y -= p.v; if (p.y < -0.02) { p.y = 1.02; p.x = Math.random(); } }
+          ctx.fillStyle = `rgba(${p.c},${p.a})`; ctx.fillRect(Math.round(p.x * W), Math.round(p.y * H), p.s * d, p.s * d);
+        }
+        if (!reduced) requestAnimationFrame(loop);
+      })();
     }
-    if (!reduced) requestAnimationFrame(loop);
-  })();
+  } catch {}
 
   /* ---------- Paleta de comandos ---------- */
   const pal = $("#palette"), pin = $("#paletteInput"), plist = $("#paletteList");
