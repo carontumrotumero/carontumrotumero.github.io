@@ -266,7 +266,8 @@ window.TIMELINE = [
 ];
 
 window.BLACKLIST = [
-  { name: "iKorex", ip: "mc.ikorex.online:19135", date: "sep. 2026", reason: "Me asignaban tareas fuera de mi horario y, al reclamarlo, me culparon a mí en vez de asumir el trato." }
+  { name: "iKorex", ip: "mc.ikorex.online:19135", date: "sep. 2026", reason: "Me asignaban tareas fuera de mi horario y, al reclamarlo, me culparon a mí en vez de asumir el trato." },
+  { name: "FunGame MC", ip: "play.fungamemc.net", date: "sep. 2026", reason: "Poco claros a la hora de explicar y dar información, y exigían mucho a cambio de muy pocos permisos." }
 ];
 
 window.SERVICES = [
