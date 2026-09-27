@@ -230,6 +230,18 @@
     <div class="card tl-card reveal"><span class="tl-date">${t.date}</span><h3>${esc(t.title)}</h3><p>${esc(t.text)}</p>
     <div class="tl-links">${t.ids.map(id => `<button data-open="${id}" style="--acc:${byId[id].accent}"><i></i>${esc(byId[id].title)}</button>`).join("")}</div></div></li>`).join("");
 
+  /* ---------- Lista negra ---------- */
+  const BL = window.BLACKLIST || [];
+  const blSec = $("#lista-negra");
+  if (BL.length) {
+    $("#blacklist").innerHTML = `<h3 class="bl-title"><i data-lucide="shield-alert"></i>Lista negra</h3>
+      <p class="bl-sub">Servidores en los que trabajé y que no recomiendo, por experiencia propia.</p>
+      <div class="bl-cards">${BL.map(s => `<article class="card bl-card">
+        <div class="bl-top"><i data-lucide="server-off"></i><div><h4>${esc(s.name)}</h4><small>${esc(s.ip)}</small></div><span class="muted bl-date">${esc(s.date)}</span></div>
+        <p>${esc(s.reason)}</p>
+      </article>`).join("")}</div>`;
+  } else if (blSec) blSec.remove();
+
   /* ---------- Servicios ---------- */
   $("#services").innerHTML = window.SERVICES.map(s => `<article class="card svc reveal"><div class="p-icon"><i data-lucide="${s.icon}"></i></div><h3>${esc(s.title)}</h3><p>${esc(s.text)}</p></article>`).join("");
 

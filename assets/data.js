@@ -265,6 +265,10 @@ window.TIMELINE = [
   { date: "Sep 2026", title: "Producción y negocio", text: "NetherCore automatiza cobros y servidores, Voxelix publica builds para 3 sistemas, Umbrathel Web llega a la 0.10, la clase usa su horario en tiempo real y llega el primer encargo grande: un launcher en Rust y Tauri para un estudio.", ids: ["nethercore", "voxelix", "umbrathel-web", "horario", "tflclient"] }
 ];
 
+window.BLACKLIST = [
+  { name: "iKorex", ip: "mc.ikorex.online:19135", date: "sep. 2026", reason: "Me asignaban tareas fuera de mi horario y, al reclamarlo, me culparon a mí en vez de asumir el trato." }
+];
+
 window.SERVICES = [
   { icon: "monitor-smartphone", title: "Creación de webs", text: "Landings, tiendas y paneles a medida, desplegados en Vercel o en tu hosting, con diseño responsive y animaciones cuidadas." },
   { icon: "server-cog", title: "Servidores de juego", text: "Nodos para Minecraft y otros juegos con aprovisionamiento automático, paneles Pterodactyl y facturación integrada." },
