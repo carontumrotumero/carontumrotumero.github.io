@@ -241,7 +241,7 @@
     $("#blacklist").innerHTML = `<h3 class="bl-title"><i data-lucide="shield-alert"></i>Lista negra</h3>
       <p class="bl-sub">Servidores en los que trabajé y que no recomiendo, por experiencia propia.</p>
       <div class="bl-cards">${BL.map(s => `<article class="card bl-card">
-        <div class="bl-top"><i data-lucide="server-off"></i><div><h4>${esc(s.name)}</h4><small>${esc(s.ip)}</small></div><span class="muted bl-date">${esc(s.date)}</span></div>
+        <div class="bl-top"><i data-lucide="server-off"></i><div><h4>${esc(s.name)}</h4>${s.ip ? `<small>${esc(s.ip)}</small>` : ""}</div><span class="muted bl-date">${esc(s.date)}</span></div>
         <p>${esc(s.reason)}</p>
       </article>`).join("")}</div>`;
   } else if (blSec) blSec.remove();
