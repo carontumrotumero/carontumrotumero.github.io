@@ -151,7 +151,7 @@ svg.lucide { width: 16px; height: 16px; stroke-width: 1.8; flex: none; }
 .c2 svg { color: var(--violet); } .c3 svg { color: #38bdf8; }
 
 /* Lista negra */
-.blacklist-section { padding-top: 0; }
+.blacklist-section { padding-top: 0; padding-bottom: 56px; }
 .blacklist { width: 100%; }
 .bl-title { display: flex; align-items: center; gap: 8px; margin: 0 0 6px; font-size: 15px; color: #fda4af; }
 .bl-title svg { color: #fb7185; }
