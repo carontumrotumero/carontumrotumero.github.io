@@ -7,7 +7,7 @@ window.PROFILE = {
   avatar: "https://avatars.githubusercontent.com/u/228751427?v=4",
   github: "https://github.com/carontumrotumero",
   since: "2025-08-26",
-  stats: { repos: 17, publicRepos: 12, privateRepos: 5, commits: 157, contributions: 166, languages: 11, releases: 3 }
+  stats: { repos: 18, publicRepos: 13, privateRepos: 5, commits: 168, contributions: 177, languages: 11, releases: 3 }
 };
 
 window.LANGS = [

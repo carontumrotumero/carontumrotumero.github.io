@@ -225,7 +225,7 @@
   const LT = window.LANGS.reduce((a, [, v]) => a + v, 0);
   $("#langBar").innerHTML = window.LANGS.map(([n, v, c]) => `<i title="${n}" style="width:${v / LT * 100}%;background:${c}"></i>`).join("");
   $("#langList").innerHTML = window.LANGS.slice(0, 8).map(([n, v, c]) => `<li><i style="background:${c}"></i>${n}<b>${(v / LT * 100).toFixed(1)}%</b></li>`).join("");
-  const MON = [["ene", 4], ["feb", 6], ["mar", 43], ["abr", 9], ["may", 6], ["jun", 22], ["jul", 19], ["ago", 11], ["sep", 46]];
+  const MON = [["ene", 4], ["feb", 6], ["mar", 43], ["abr", 9], ["may", 6], ["jun", 22], ["jul", 19], ["ago", 11], ["sep", 56], ["oct", 1]];
   const mMax = Math.max(...MON.map(m => m[1]));
   $("#months").innerHTML = MON.map(([m, v]) => `<div class="month"><div class="bar" style="height:${Math.max(2, v / mMax * 85)}%"><b>${v}</b></div><span>${m}</span></div>`).join("");
 
@@ -255,9 +255,9 @@
   /* ---------- Terminal ---------- */
   const TERM = [
     ["p", "$ ", "gh repo list carontumrotumero"],
-    ["o", "", "<span class='h'>17</span> repositorios · <span class='v'>5 privados</span>"],
+    ["o", "", "<span class='h'>18</span> repositorios · <span class='v'>5 privados</span>"],
     ["p", "$ ", "git log --oneline | wc -l"],
-    ["o", "", "<span class='h'>157</span> commits"],
+    ["o", "", "<span class='h'>168</span> commits"],
     ["p", "$ ", "./voxelix --launch 1.21.1-fabric"],
     ["o", "", "<span class='c'>▸ Login Microsoft ✓  ▸ Fabric ✓  ▸ Sodium + Iris ✓</span>"],
   ];
