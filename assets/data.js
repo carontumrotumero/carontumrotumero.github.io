@@ -271,7 +271,6 @@ window.BLACKLIST = [
   { name: "Ashina Ryuu", date: "sep. 2026", reason: "Me echaron sin darme ningún motivo." },
   { name: "ImaginityCraft", date: "sep. 2026", reason: "Me echaron sin darme ningún motivo." },
   { name: "ASTGARD", date: "oct. 2026", reason: "Me echaron sin ni siquiera darme la oportunidad." },
-  { name: "BlazeMC", date: "oct. 2026", reason: "Malos owners." },
   { name: "Led Studio", date: "oct. 2026", reason: "Malos owners." }
 ];
 
