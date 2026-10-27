@@ -7,11 +7,11 @@ window.PROFILE = {
   avatar: "https://avatars.githubusercontent.com/u/228751427?v=4",
   github: "https://github.com/carontumrotumero",
   since: "2025-08-26",
-  stats: { repos: 18, publicRepos: 13, privateRepos: 5, commits: 168, contributions: 177, languages: 11, releases: 3 }
+  stats: { repos: 19, publicRepos: 14, privateRepos: 5, commits: 177, contributions: 187, languages: 11, releases: 3 }
 };
 
 window.LANGS = [
-  ["JavaScript", 581311, "#f7df1e"],
+  ["JavaScript", 592053, "#f7df1e"],
   ["TypeScript", 364897, "#3178c6"],
   ["C++", 157666, "#f34b7d"],
   ["CSS", 121753, "#8b5cf6"],
@@ -48,8 +48,8 @@ window.PROJECTS = [
     tagline: "Launcher de Minecraft encargado por un estudio, en Rust + Tauri",
     desc: "Launcher de escritorio hecho a medida para un cliente: backend en Rust sobre Tauri 2 y frontend en Svelte 5. Gestión de instancias, mods, modpacks, shaders y resource packs, con auto-actualización y un instalador propio para Windows, macOS y Linux.",
     cats: ["escritorio", "minecraft", "cliente"], wip: true, featured: true, size: "lg",
-    langs: { Rust: 578373, Svelte: 290683, TypeScript: 83391, CSS: 22159, Java: 3997, Shell: 2894, JavaScript: 1532 },
-    commits: 128, created: "2026-09-13", updated: "2026-09-26", version: "v0.10.7",
+    langs: { Rust: 903095, Svelte: 658548, TypeScript: 254794, JavaScript: 110731, CSS: 44110, Java: 3997, Shell: 2894, HTML: 652 },
+    commits: 250, created: "2026-09-13", updated: "2026-10-23", version: "v0.13.2",
     stack: ["Rust", "Tauri 2", "Svelte 5", "SvelteKit", "TypeScript", "Vite", "GitHub Actions"],
     features: [
       "Gestión de instancias, mods, modpacks, shaders y resource packs desde un mismo panel",
@@ -58,7 +58,7 @@ window.PROJECTS = [
       "Auto-actualización en segundo plano con badge de aviso, y refresco automático del token de Microsoft antes de lanzar",
       "Instalador propio en español para Windows y macOS, y script de un comando para Linux (detecta apt/dnf/AppImage)",
       "Exportación, backup e integridad de instancias, con diagnóstico offline",
-      "Más de 125 commits en dos semanas, con changelog detallado por función"
+      "Más de 250 commits en seis semanas, con changelog detallado por función — ya en v0.13.2"
     ],
     links: []
   },
@@ -118,6 +118,22 @@ window.PROJECTS = [
     links: [{ label: "Web en vivo", url: "https://nethercore.vercel.app", icon: "external-link" }]
   },
   {
+    id: "blazemc-status", repo: "blazemc-discord-status", title: "BlazeMC Discord Status", icon: "activity", accent: "#22d3ee",
+    tagline: "Estado en vivo de un servidor de Minecraft, editando un único mensaje de Discord",
+    desc: "Bot sin servidor propio: un workflow de GitHub Actions hace ping directo al servidor por el protocolo nativo de Minecraft y edita en el sitio un único mensaje de Discord con jugadores conectados, estado y lista de nombres.",
+    cats: ["backend", "minecraft"], private: false, size: "sm",
+    langs: { JavaScript: 10373 },
+    commits: 8, created: "2026-10-18", updated: "2026-10-19",
+    stack: ["Node.js", "GitHub Actions", "Discord Webhooks", "Minecraft Server List Ping"],
+    features: [
+      "Ping nativo al servidor (protocolo Server List Ping), sin dependencias ni acceso al panel",
+      "Edita siempre el mismo mensaje de Discord en vez de espamear uno nuevo cada vez",
+      "Se autoencadena: cada ejecución dispara la siguiente por API al terminar, porque el cron de Actions no es fiable en intervalos cortos",
+      "Actualización cada 2 segundos con manejo de rate limits de Discord sin abortar el workflow"
+    ],
+    links: [{ label: "Repositorio", url: "https://github.com/carontumrotumero/blazemc-discord-status", icon: "github" }]
+  },
+  {
     id: "umbrathel-client", repo: "Umbrathel-client", title: "Umbrathel Client", icon: "swords", accent: "#eab308",
     tagline: "Cliente oficial de Minecraft del Reino de Umbrathel",
     desc: "Launcher de Minecraft en Electron + React para la comunidad de rol de Umbrathel: instancias, instalación de Forge, gestión de Java, consola en vivo y mods empaquetados. 10 versiones publicadas con auto-updater.",
@@ -156,12 +172,13 @@ window.PROJECTS = [
     tagline: "PWA del horario de SMR, compartida en tiempo real por toda la clase",
     desc: "Web instalable con el horario semanal, festivos del calendario escolar, avisos de falta, tareas y exámenes compartidos al momento entre compañeros, y un calendario .ics suscribible generado por una Edge Function.",
     cats: ["web", "backend"], private: false, hidden: true, featured: true, size: "md",
-    langs: { JavaScript: 70382, CSS: 15114, TypeScript: 11885, HTML: 7465 },
-    commits: 13, created: "2026-09-14", updated: "2026-09-21",
+    langs: { JavaScript: 70751, CSS: 15114, TypeScript: 11885, HTML: 7465 },
+    commits: 14, created: "2026-09-14", updated: "2026-10-20",
     stack: ["PWA + Service Worker", "Supabase", "Edge Functions (Deno)", "iCalendar", "Notifications API"],
     features: [
-      "Acceso protegido por contraseña validada en el servidor, y PIN por alumno",
+      "Acceso protegido por contraseña validada en el servidor, y PIN propio por alumno",
       "Avisos y tareas en tiempo real que solo puede borrar quien los creó",
+      "Exámenes y exposiciones con avisos de tareas por entregar, y orden automático: pendientes arriba, vencidas abajo",
       "Feed .ics para Google Calendar / Apple Calendar que se actualiza solo",
       "Avisos de huelgas, festivos locales, recreo y tema claro/oscuro",
       "Notificaciones 10 minutos antes de cada clase"
@@ -262,7 +279,8 @@ window.TIMELINE = [
   { date: "Abr 2026", title: "React 19 + Tailwind v4", text: "Banco Estelar: el primer proyecto con TypeScript estricto, funciones RPC y Tailwind v4.", ids: ["banco-estelar"] },
   { date: "May – Jun 2026", title: "El ecosistema de Umbrathel", text: "El bot de Discord que gobierna todo el reino, Banco de Umbrathel conectado a él, y Umbrathel Client, un launcher de Minecraft con 10 versiones publicadas.", ids: ["bot-umbrathel", "banco-umbrathel", "umbrathel-client"] },
   { date: "Jul – Ago 2026", title: "Un navegador propio y el salto a C++", text: "Nace Umbrathel Web sobre Chromium, llega el primer cliente real (Studios MV) y arranca Voxelix en C++17 / Qt6.", ids: ["umbrathel-web", "studiosmv", "voxelix"] },
-  { date: "Sep 2026", title: "Producción y negocio", text: "NetherCore automatiza cobros y servidores, Voxelix publica builds para 3 sistemas, Umbrathel Web llega a la 0.10, la clase usa su horario en tiempo real y llega el primer encargo grande: un launcher en Rust y Tauri para un estudio.", ids: ["nethercore", "voxelix", "umbrathel-web", "horario", "tflclient"] }
+  { date: "Sep 2026", title: "Producción y negocio", text: "NetherCore automatiza cobros y servidores, Voxelix publica builds para 3 sistemas, Umbrathel Web llega a la 0.10, la clase usa su horario en tiempo real y llega el primer encargo grande: un launcher en Rust y Tauri para un estudio.", ids: ["nethercore", "voxelix", "umbrathel-web", "horario", "tflclient"] },
+  { date: "Oct 2026", title: "Monitorización en vivo y el encargo a toda marcha", text: "Nace BlazeMC Discord Status, un bot sin servidor que vive solo de GitHub Actions. El horario de clase suma exámenes y PIN por alumno, y TFL Client encadena más de 250 commits hasta la v0.13.2.", ids: ["blazemc-status", "horario", "tflclient"] }
 ];
 
 window.BLACKLIST = [
