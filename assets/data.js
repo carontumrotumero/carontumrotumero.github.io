@@ -121,7 +121,7 @@ window.PROJECTS = [
     id: "blazemc-status", repo: "blazemc-discord-status", title: "BlazeMC Discord Status", icon: "activity", accent: "#22d3ee",
     tagline: "Estado en vivo de un servidor de Minecraft, editando un único mensaje de Discord",
     desc: "Bot sin servidor propio: un workflow de GitHub Actions hace ping directo al servidor por el protocolo nativo de Minecraft y edita en el sitio un único mensaje de Discord con jugadores conectados, estado y lista de nombres.",
-    cats: ["backend", "minecraft"], private: false, size: "sm",
+    cats: ["backend", "minecraft"], private: true, size: "sm",
     langs: { JavaScript: 10373 },
     commits: 8, created: "2026-10-18", updated: "2026-10-19",
     stack: ["Node.js", "GitHub Actions", "Discord Webhooks", "Minecraft Server List Ping"],
@@ -131,7 +131,7 @@ window.PROJECTS = [
       "Se autoencadena: cada ejecución dispara la siguiente por API al terminar, porque el cron de Actions no es fiable en intervalos cortos",
       "Actualización cada 2 segundos con manejo de rate limits de Discord sin abortar el workflow"
     ],
-    links: [{ label: "Repositorio", url: "https://github.com/carontumrotumero/blazemc-discord-status", icon: "github" }]
+    links: []
   },
   {
     id: "umbrathel-client", repo: "Umbrathel-client", title: "Umbrathel Client", icon: "swords", accent: "#eab308",
