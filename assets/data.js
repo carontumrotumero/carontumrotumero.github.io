@@ -7,7 +7,7 @@ window.PROFILE = {
   avatar: "https://avatars.githubusercontent.com/u/228751427?v=4",
   github: "https://github.com/carontumrotumero",
   since: "2025-08-26",
-  stats: { repos: 19, publicRepos: 14, privateRepos: 5, commits: 177, contributions: 187, languages: 11, releases: 3 }
+  stats: { repos: 20, publicRepos: 15, privateRepos: 5, commits: 178, contributions: 189, languages: 11, releases: 3 }
 };
 
 window.LANGS = [
@@ -15,7 +15,7 @@ window.LANGS = [
   ["TypeScript", 364897, "#3178c6"],
   ["C++", 157666, "#f34b7d"],
   ["CSS", 121753, "#8b5cf6"],
-  ["HTML", 112123, "#e34c26"],
+  ["HTML", 143110, "#e34c26"],
   ["PL/pgSQL", 68422, "#336791"],
   ["C", 5303, "#a8b9cc"],
   ["CMake", 3834, "#64748b"],
@@ -48,8 +48,8 @@ window.PROJECTS = [
     tagline: "Launcher de Minecraft encargado por un estudio, en Rust + Tauri",
     desc: "Launcher de escritorio hecho a medida para un cliente: backend en Rust sobre Tauri 2 y frontend en Svelte 5. Gestión de instancias, mods, modpacks, shaders y resource packs, con auto-actualización y un instalador propio para Windows, macOS y Linux.",
     cats: ["escritorio", "minecraft", "cliente"], wip: true, featured: true, size: "lg",
-    langs: { Rust: 903095, Svelte: 658548, TypeScript: 254794, JavaScript: 110731, CSS: 44110, Java: 3997, Shell: 2894, HTML: 652 },
-    commits: 250, created: "2026-09-13", updated: "2026-10-23", version: "v0.13.2",
+    langs: { Rust: 1190612, Svelte: 725683, TypeScript: 313875, JavaScript: 209636, CSS: 51546, Java: 3997, Shell: 2894, Python: 1207, HTML: 652 },
+    commits: 324, created: "2026-09-13", updated: "2026-11-14", version: "v0.15.2",
     stack: ["Rust", "Tauri 2", "Svelte 5", "SvelteKit", "TypeScript", "Vite", "GitHub Actions"],
     features: [
       "Gestión de instancias, mods, modpacks, shaders y resource packs desde un mismo panel",
@@ -58,9 +58,27 @@ window.PROJECTS = [
       "Auto-actualización en segundo plano con badge de aviso, y refresco automático del token de Microsoft antes de lanzar",
       "Instalador propio en español para Windows y macOS, y script de un comando para Linux (detecta apt/dnf/AppImage)",
       "Exportación, backup e integridad de instancias, con diagnóstico offline",
-      "Más de 250 commits en seis semanas, con changelog detallado por función — ya en v0.13.2"
+      "Más de 320 commits en dos meses, con changelog detallado por función — ya en v0.15.2"
     ],
     links: []
+  },
+  {
+    id: "tflclient-web", repo: "TFLClientWEB", title: "TFL Client Web", icon: "layout-template", accent: "#2dd4bf",
+    tagline: "Web oficial del ecosistema TFL Client, en Next.js",
+    desc: "Site completo en Next.js App Router para el launcher TFL Client: historial de releases paginado directo desde GitHub, comparativa de versiones, centro de ayuda con búsqueda local, selector de idioma ES/EN y presentación de Selection. Desplegado en Vercel sobre launcher.tflives.com.",
+    cats: ["web", "cliente"], featured: true, size: "lg",
+    langs: { TypeScript: 289523, CSS: 58830, JavaScript: 20858 },
+    commits: 13, created: "2026-11-09", updated: "2026-11-14",
+    stack: ["Next.js (App Router)", "React", "TypeScript", "Vercel", "GitHub Releases API", "react-markdown / GFM", "Playwright (e2e)"],
+    features: [
+      "Historial de releases paginado desde GitHub (no solo las últimas 10), con filtro estable/beta y página por tag",
+      "Comparativa de instalaciones, última estable, FAQ y carrusel de capturas con pausa al ampliar",
+      "Selector de idioma ES/EN con rutas propias, hreflang y diccionario de traducción",
+      "Centro de ayuda con búsqueda local sobre artículos y categorías propias",
+      "Página de descargas con selector de sistema operativo, tamaños y notas por versión",
+      "Suite de tests: lint, typecheck, unitarios y end-to-end con Playwright"
+    ],
+    links: [{ label: "Web en vivo", url: "https://launcher.tflives.com", icon: "external-link" }]
   },
   {
     id: "bot-umbrathel", repo: "Bot verificador", title: "Bot de Umbrathel", icon: "bot", accent: "#22c55e",
@@ -116,6 +134,22 @@ window.PROJECTS = [
       "Pase de animaciones: spotlight, reveal on scroll y barra de progreso"
     ],
     links: [{ label: "Web en vivo", url: "https://nethercore.vercel.app", icon: "external-link" }]
+  },
+  {
+    id: "astra-cloud", repo: "astra-cloud-site", title: "Astra Cloud", icon: "cloud", accent: "#0ea5e9",
+    tagline: "Landing para hosting 24/7 de bots y proyectos de Discord",
+    desc: "Página comercial para un servicio de hosting pensado para la comunidad de Discord: planes desde 1.5€ o pago con Boosts del servidor, pensado para bots y proyectos en Node.js y Python, con soporte propio por Discord.",
+    cats: ["web"], private: false, size: "sm",
+    langs: { HTML: 30987 },
+    commits: 1, created: "2026-11-09", updated: "2026-11-09",
+    stack: ["HTML", "CSS", "JavaScript"],
+    features: [
+      "Planes desde 1.5€ o pago con Boosts del servidor de Discord",
+      "Pensado para bots y proyectos en Node.js y Python",
+      "Sección de reportes de problemas y comentarios de la comunidad",
+      "Soporte propio por Discord 24/7"
+    ],
+    links: [{ label: "Repositorio", url: "https://github.com/carontumrotumero/astra-cloud-site", icon: "github" }]
   },
   {
     id: "blazemc-status", repo: "blazemc-discord-status", title: "BlazeMC Discord Status", icon: "activity", accent: "#22d3ee",
@@ -280,7 +314,8 @@ window.TIMELINE = [
   { date: "May – Jun 2026", title: "El ecosistema de Umbrathel", text: "El bot de Discord que gobierna todo el reino, Banco de Umbrathel conectado a él, y Umbrathel Client, un launcher de Minecraft con 10 versiones publicadas.", ids: ["bot-umbrathel", "banco-umbrathel", "umbrathel-client"] },
   { date: "Jul – Ago 2026", title: "Un navegador propio y el salto a C++", text: "Nace Umbrathel Web sobre Chromium, llega el primer cliente real (Studios MV) y arranca Voxelix en C++17 / Qt6.", ids: ["umbrathel-web", "studiosmv", "voxelix"] },
   { date: "Sep 2026", title: "Producción y negocio", text: "NetherCore automatiza cobros y servidores, Voxelix publica builds para 3 sistemas, Umbrathel Web llega a la 0.10, la clase usa su horario en tiempo real y llega el primer encargo grande: un launcher en Rust y Tauri para un estudio.", ids: ["nethercore", "voxelix", "umbrathel-web", "horario", "tflclient"] },
-  { date: "Oct 2026", title: "Monitorización en vivo y el encargo a toda marcha", text: "Nace BlazeMC Discord Status, un bot sin servidor que vive solo de GitHub Actions. El horario de clase suma exámenes y PIN por alumno, y TFL Client encadena más de 250 commits hasta la v0.13.2.", ids: ["blazemc-status", "horario", "tflclient"] }
+  { date: "Oct 2026", title: "Monitorización en vivo y el encargo a toda marcha", text: "Nace BlazeMC Discord Status, un bot sin servidor que vive solo de GitHub Actions. El horario de clase suma exámenes y PIN por alumno, y TFL Client encadena más de 250 commits hasta la v0.13.2.", ids: ["blazemc-status", "horario", "tflclient"] },
+  { date: "Nov 2026", title: "Un ecosistema cada vez más grande", text: "TFL Client llega a la v0.15.2 con más de 320 commits, estrena su web oficial en Next.js (launcher.tflives.com) y Astra Cloud lanza su landing de hosting para bots de Discord.", ids: ["tflclient", "tflclient-web", "astra-cloud"] }
 ];
 
 window.BLACKLIST = [
