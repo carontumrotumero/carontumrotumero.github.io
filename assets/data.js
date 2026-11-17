@@ -7,13 +7,13 @@ window.PROFILE = {
   avatar: "https://avatars.githubusercontent.com/u/228751427?v=4",
   github: "https://github.com/carontumrotumero",
   since: "2025-08-26",
-  stats: { repos: 22, publicRepos: 17, privateRepos: 5, commits: 183, contributions: 196, languages: 11, releases: 3 }
+  stats: { repos: 23, publicRepos: 18, privateRepos: 5, commits: 185, contributions: 199, languages: 11, releases: 3 }
 };
 
 window.LANGS = [
   ["JavaScript", 596387, "#f7df1e"],
   ["TypeScript", 364897, "#3178c6"],
-  ["HTML", 162267, "#e34c26"],
+  ["HTML", 281644, "#e34c26"],
   ["C++", 157666, "#f34b7d"],
   ["CSS", 144318, "#8b5cf6"],
   ["PL/pgSQL", 68422, "#336791"],
@@ -249,6 +249,22 @@ window.PROJECTS = [
     links: []
   },
   {
+    id: "sai-simulator", repo: "simulador-educativo-de-sai-smr", title: "AulaSAI SMR", icon: "calculator", accent: "#818cf8",
+    tagline: "Simulador de las 4 fórmulas del SAI para mi clase de SMR",
+    desc: "Herramienta de estudio de una sola página: calculadora de parámetros del SAI, entrenamiento guiado con pistas y un simulador de examen de 10 ejercicios, con resumen de fórmulas para repasar antes del examen.",
+    cats: ["web"], private: false, hidden: true, size: "sm",
+    langs: { HTML: 119377 },
+    commits: 2, created: "2026-11-17", updated: "2026-11-17",
+    stack: ["HTML", "Tailwind CSS", "JavaScript"],
+    features: [
+      "Calculadora de parámetros del SAI",
+      "Entrenamiento guiado con pistas paso a paso",
+      "Simulador de examen con 10 ejercicios",
+      "Resumen de fórmulas para repasar antes del examen"
+    ],
+    links: []
+  },
+  {
     id: "studiosmv", repo: "studiosmv-erty", title: "Studios MV · ERTY", icon: "clapperboard", accent: "#f43f5e",
     tagline: "Web para un cliente: IA, cartomagia y edición de vídeo",
     desc: "Landing de marca para un cliente real con secciones de cursos de IA y automatización, formación en cartomagia y servicios de edición, con reseñas reales y contacto por Discord, WhatsApp y Gmail.",
@@ -344,7 +360,7 @@ window.TIMELINE = [
   { date: "Jul – Ago 2026", title: "Un navegador propio y el salto a C++", text: "Nace Umbrathel Web sobre Chromium, llega el primer cliente real (Studios MV) y arranca Voxelix en C++17 / Qt6.", ids: ["umbrathel-web", "studiosmv", "voxelix"] },
   { date: "Sep 2026", title: "Producción y negocio", text: "NetherCore automatiza cobros y servidores, Voxelix publica builds para 3 sistemas, Umbrathel Web llega a la 0.10, la clase usa su horario en tiempo real y llega el primer encargo grande: un launcher en Rust y Tauri para un estudio.", ids: ["nethercore", "voxelix", "umbrathel-web", "horario", "tflclient"] },
   { date: "Oct 2026", title: "Monitorización en vivo y el encargo a toda marcha", text: "Nace BlazeMC Discord Status, un bot sin servidor que vive solo de GitHub Actions. El horario de clase suma exámenes y PIN por alumno, y TFL Client encadena más de 250 commits hasta la v0.13.2.", ids: ["blazemc-status", "horario", "tflclient"] },
-  { date: "Nov 2026", title: "Un ecosistema cada vez más grande", text: "TFL Client supera los 325 commits, estrena su web oficial en Next.js (launcher.tflives.com), Astra Cloud lanza su landing de hosting para bots de Discord, y llegan dos encargos más: el portafolio de LAKY y el staff ID de z_Mari4.", ids: ["tflclient", "tflclient-web", "astra-cloud", "laky-portfolio", "mari4-portfolio"] }
+  { date: "Nov 2026", title: "Un ecosistema cada vez más grande", text: "TFL Client supera los 325 commits, estrena su web oficial en Next.js (launcher.tflives.com), Astra Cloud lanza su landing de hosting para bots de Discord, llegan dos encargos más (el portafolio de LAKY y el staff ID de z_Mari4) y nace AulaSAI, un simulador de examen para mi propia clase de SMR.", ids: ["tflclient", "tflclient-web", "astra-cloud", "laky-portfolio", "mari4-portfolio", "sai-simulator"] }
 ];
 
 window.BLACKLIST = [
