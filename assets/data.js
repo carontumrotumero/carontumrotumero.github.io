@@ -7,15 +7,15 @@ window.PROFILE = {
   avatar: "https://avatars.githubusercontent.com/u/228751427?v=4",
   github: "https://github.com/carontumrotumero",
   since: "2025-08-26",
-  stats: { repos: 20, publicRepos: 15, privateRepos: 5, commits: 178, contributions: 189, languages: 11, releases: 3 }
+  stats: { repos: 22, publicRepos: 17, privateRepos: 5, commits: 183, contributions: 196, languages: 11, releases: 3 }
 };
 
 window.LANGS = [
-  ["JavaScript", 592053, "#f7df1e"],
+  ["JavaScript", 596387, "#f7df1e"],
   ["TypeScript", 364897, "#3178c6"],
+  ["HTML", 162267, "#e34c26"],
   ["C++", 157666, "#f34b7d"],
-  ["CSS", 121753, "#8b5cf6"],
-  ["HTML", 143110, "#e34c26"],
+  ["CSS", 144318, "#8b5cf6"],
   ["PL/pgSQL", 68422, "#336791"],
   ["C", 5303, "#a8b9cc"],
   ["CMake", 3834, "#64748b"],
@@ -48,8 +48,8 @@ window.PROJECTS = [
     tagline: "Launcher de Minecraft encargado por un estudio, en Rust + Tauri",
     desc: "Launcher de escritorio hecho a medida para un cliente: backend en Rust sobre Tauri 2 y frontend en Svelte 5. Gestión de instancias, mods, modpacks, shaders y resource packs, con auto-actualización y un instalador propio para Windows, macOS y Linux.",
     cats: ["escritorio", "minecraft", "cliente"], wip: true, featured: true, size: "lg",
-    langs: { Rust: 1190612, Svelte: 725683, TypeScript: 313875, JavaScript: 209636, CSS: 51546, Java: 3997, Shell: 2894, Python: 1207, HTML: 652 },
-    commits: 324, created: "2026-09-13", updated: "2026-11-14", version: "v0.15.2",
+    langs: { Rust: 1239739, Svelte: 748331, TypeScript: 335926, JavaScript: 255840, CSS: 54333, Java: 3997, Shell: 2894, Python: 1207, HTML: 652 },
+    commits: 328, created: "2026-09-13", updated: "2026-11-17", version: "v0.15.2",
     stack: ["Rust", "Tauri 2", "Svelte 5", "SvelteKit", "TypeScript", "Vite", "GitHub Actions"],
     features: [
       "Gestión de instancias, mods, modpacks, shaders y resource packs desde un mismo panel",
@@ -166,6 +166,35 @@ window.PROJECTS = [
       "Actualización cada 2 segundos con manejo de rate limits de Discord sin abortar el workflow"
     ],
     links: []
+  },
+  {
+    id: "laky-portfolio", repo: "laky-portfolio", title: "Portafolio de LAKY", icon: "user-round", accent: "#fb7185",
+    tagline: "Portafolio para un desarrollador Junior, fundador de HyperMC y AEVORYNTH Studio",
+    desc: "Landing personal para un cliente: desarrollador Junior especializado en plugins de Minecraft, configuración de servidores, desarrollo web y bots de Discord. Identidad propia en vez de plantilla genérica, con sus marcas HyperMC y AEVORYNTH Studio.",
+    cats: ["web", "cliente"], private: false, size: "sm",
+    langs: { CSS: 13233, HTML: 12410, JavaScript: 2334 },
+    commits: 4, created: "2026-11-15", updated: "2026-11-15",
+    stack: ["HTML", "CSS", "JavaScript", "lucide-icons", "Vercel"],
+    features: [
+      "Identidad visual propia en vez de plantilla genérica",
+      "Iconos de lucide-icons en skills, contacto y navegación",
+      "Presenta sus proyectos: HyperMC y AEVORYNTH Studio"
+    ],
+    links: [{ label: "Web en vivo", url: "https://laky-portfolio.vercel.app", icon: "external-link" }]
+  },
+  {
+    id: "mari4-portfolio", repo: "mari4-portfolio", title: "Staff ID de z_Mari4", icon: "id-card", accent: "#a3e635",
+    tagline: "Staff ID para un miembro de staff con historial en 7 servidores de Minecraft",
+    desc: "Página de presentación para un cliente del mundo de Minecraft: historial de staff como Founder en BlazeMC, SrMod en NauticMC, Media-Manager en AstroMC y trayectoria en otros servidores.",
+    cats: ["web", "cliente", "minecraft"], private: false, size: "sm",
+    langs: { CSS: 9332, HTML: 6747, JavaScript: 2000 },
+    commits: 1, created: "2026-11-17", updated: "2026-11-17",
+    stack: ["HTML", "CSS", "JavaScript", "GitHub Pages"],
+    features: [
+      "Historial de servicio en 7 servidores de Minecraft",
+      "Roles destacados: Founder, SrMod y Media-Manager"
+    ],
+    links: [{ label: "Web en vivo", url: "https://carontumrotumero.github.io/mari4-portfolio/", icon: "external-link" }]
   },
   {
     id: "umbrathel-client", repo: "Umbrathel-client", title: "Umbrathel Client", icon: "swords", accent: "#eab308",
@@ -315,7 +344,7 @@ window.TIMELINE = [
   { date: "Jul – Ago 2026", title: "Un navegador propio y el salto a C++", text: "Nace Umbrathel Web sobre Chromium, llega el primer cliente real (Studios MV) y arranca Voxelix en C++17 / Qt6.", ids: ["umbrathel-web", "studiosmv", "voxelix"] },
   { date: "Sep 2026", title: "Producción y negocio", text: "NetherCore automatiza cobros y servidores, Voxelix publica builds para 3 sistemas, Umbrathel Web llega a la 0.10, la clase usa su horario en tiempo real y llega el primer encargo grande: un launcher en Rust y Tauri para un estudio.", ids: ["nethercore", "voxelix", "umbrathel-web", "horario", "tflclient"] },
   { date: "Oct 2026", title: "Monitorización en vivo y el encargo a toda marcha", text: "Nace BlazeMC Discord Status, un bot sin servidor que vive solo de GitHub Actions. El horario de clase suma exámenes y PIN por alumno, y TFL Client encadena más de 250 commits hasta la v0.13.2.", ids: ["blazemc-status", "horario", "tflclient"] },
-  { date: "Nov 2026", title: "Un ecosistema cada vez más grande", text: "TFL Client llega a la v0.15.2 con más de 320 commits, estrena su web oficial en Next.js (launcher.tflives.com) y Astra Cloud lanza su landing de hosting para bots de Discord.", ids: ["tflclient", "tflclient-web", "astra-cloud"] }
+  { date: "Nov 2026", title: "Un ecosistema cada vez más grande", text: "TFL Client supera los 325 commits, estrena su web oficial en Next.js (launcher.tflives.com), Astra Cloud lanza su landing de hosting para bots de Discord, y llegan dos encargos más: el portafolio de LAKY y el staff ID de z_Mari4.", ids: ["tflclient", "tflclient-web", "astra-cloud", "laky-portfolio", "mari4-portfolio"] }
 ];
 
 window.BLACKLIST = [
