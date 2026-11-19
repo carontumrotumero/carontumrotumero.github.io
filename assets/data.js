@@ -7,13 +7,13 @@ window.PROFILE = {
   avatar: "https://avatars.githubusercontent.com/u/228751427?v=4",
   github: "https://github.com/carontumrotumero",
   since: "2025-08-26",
-  stats: { repos: 23, publicRepos: 18, privateRepos: 5, commits: 185, contributions: 199, languages: 11, releases: 3 }
+  stats: { repos: 26, publicRepos: 21, privateRepos: 5, commits: 188, contributions: 205, languages: 11, releases: 3 }
 };
 
 window.LANGS = [
   ["JavaScript", 596387, "#f7df1e"],
+  ["HTML", 583492, "#e34c26"],
   ["TypeScript", 364897, "#3178c6"],
-  ["HTML", 281644, "#e34c26"],
   ["C++", 157666, "#f34b7d"],
   ["CSS", 144318, "#8b5cf6"],
   ["PL/pgSQL", 68422, "#336791"],
@@ -48,8 +48,8 @@ window.PROJECTS = [
     tagline: "Launcher de Minecraft encargado por un estudio, en Rust + Tauri",
     desc: "Launcher de escritorio hecho a medida para un cliente: backend en Rust sobre Tauri 2 y frontend en Svelte 5. Gestión de instancias, mods, modpacks, shaders y resource packs, con auto-actualización y un instalador propio para Windows, macOS y Linux.",
     cats: ["escritorio", "minecraft", "cliente"], wip: true, featured: true, size: "lg",
-    langs: { Rust: 1239739, Svelte: 748331, TypeScript: 335926, JavaScript: 255840, CSS: 54333, Java: 3997, Shell: 2894, Python: 1207, HTML: 652 },
-    commits: 328, created: "2026-09-13", updated: "2026-11-17", version: "v0.15.2",
+    langs: { Rust: 1564368, Svelte: 800332, TypeScript: 361258, JavaScript: 315635, CSS: 57192, Python: 5802, Shell: 2894, HTML: 652 },
+    commits: 337, created: "2026-09-13", updated: "2026-11-19", version: "v0.15.4",
     stack: ["Rust", "Tauri 2", "Svelte 5", "SvelteKit", "TypeScript", "Vite", "GitHub Actions"],
     features: [
       "Gestión de instancias, mods, modpacks, shaders y resource packs desde un mismo panel",
@@ -58,7 +58,7 @@ window.PROJECTS = [
       "Auto-actualización en segundo plano con badge de aviso, y refresco automático del token de Microsoft antes de lanzar",
       "Instalador propio en español para Windows y macOS, y script de un comando para Linux (detecta apt/dnf/AppImage)",
       "Exportación, backup e integridad de instancias, con diagnóstico offline",
-      "Más de 320 commits en dos meses, con changelog detallado por función — ya en v0.15.2"
+      "Más de 335 commits en dos meses, con changelog detallado por función — ya en v0.15.4"
     ],
     links: []
   },
@@ -265,6 +265,49 @@ window.PROJECTS = [
     links: []
   },
   {
+    id: "pseint-guide", repo: "guia-interactiva-de-pseint", title: "Guía Interactiva de PSeInt", icon: "terminal-square", accent: "#f472b6",
+    tagline: "Teoría, estructuras y ejercicios de PSeInt para repasar algoritmos",
+    desc: "Guía de una sola página sobre PSeInt: teoría de pseudocódigo, estructuras de control y ejercicios interactivos para practicar antes de escribir código real.",
+    cats: ["web"], private: false, size: "sm",
+    langs: { HTML: 204742 },
+    commits: 1, created: "2026-11-17", updated: "2026-11-17",
+    stack: ["HTML", "Tailwind CSS", "JavaScript"],
+    features: [
+      "Teoría de PSeInt explicada paso a paso",
+      "Estructuras de control: secuencial, condicional y bucles",
+      "Ejercicios interactivos para practicar"
+    ],
+    links: [{ label: "Web en vivo", url: "https://carontumrotumero.github.io/guia-interactiva-de-pseint/", icon: "external-link" }]
+  },
+  {
+    id: "recicla-host", repo: "recicla-host", title: "Recicla Host", icon: "recycle", accent: "#65a30d",
+    tagline: "Landing para hosting y VPS con hardware reutilizado",
+    desc: "Página comercial para un servicio de hosting y VPS que reutiliza hardware en buen estado y comparte recursos, pensado para reducir residuos electrónicos.",
+    cats: ["web"], private: false, size: "sm",
+    langs: { HTML: 44204 },
+    commits: 1, created: "2026-11-19", updated: "2026-11-19",
+    stack: ["HTML", "CSS", "JavaScript"],
+    features: [
+      "Hosting y VPS sobre hardware reutilizado",
+      "Mensaje centrado en reducir residuos electrónicos"
+    ],
+    links: [{ label: "Web en vivo", url: "https://carontumrotumero.github.io/recicla-host/", icon: "external-link" }]
+  },
+  {
+    id: "greenvox-nodes", repo: "greenvox-nodes", title: "GreenVox Nodes", icon: "leaf", accent: "#10b981",
+    tagline: "Hosting de servidores de juego con energía 100% renovable",
+    desc: "Landing para un servicio de nodos de Minecraft y otros juegos alojados en centros de datos con energía renovable.",
+    cats: ["web", "minecraft"], private: false, size: "sm",
+    langs: { HTML: 52902 },
+    commits: 1, created: "2026-11-19", updated: "2026-11-19",
+    stack: ["HTML", "CSS", "JavaScript"],
+    features: [
+      "Nodos de Minecraft y otros juegos con energía 100% renovable",
+      "Mensaje de sostenibilidad para el hosting de servidores"
+    ],
+    links: [{ label: "Web en vivo", url: "https://carontumrotumero.github.io/greenvox-nodes/", icon: "external-link" }]
+  },
+  {
     id: "studiosmv", repo: "studiosmv-erty", title: "Studios MV · ERTY", icon: "clapperboard", accent: "#f43f5e",
     tagline: "Web para un cliente: IA, cartomagia y edición de vídeo",
     desc: "Landing de marca para un cliente real con secciones de cursos de IA y automatización, formación en cartomagia y servicios de edición, con reseñas reales y contacto por Discord, WhatsApp y Gmail.",
@@ -360,7 +403,7 @@ window.TIMELINE = [
   { date: "Jul – Ago 2026", title: "Un navegador propio y el salto a C++", text: "Nace Umbrathel Web sobre Chromium, llega el primer cliente real (Studios MV) y arranca Voxelix en C++17 / Qt6.", ids: ["umbrathel-web", "studiosmv", "voxelix"] },
   { date: "Sep 2026", title: "Producción y negocio", text: "NetherCore automatiza cobros y servidores, Voxelix publica builds para 3 sistemas, Umbrathel Web llega a la 0.10, la clase usa su horario en tiempo real y llega el primer encargo grande: un launcher en Rust y Tauri para un estudio.", ids: ["nethercore", "voxelix", "umbrathel-web", "horario", "tflclient"] },
   { date: "Oct 2026", title: "Monitorización en vivo y el encargo a toda marcha", text: "Nace BlazeMC Discord Status, un bot sin servidor que vive solo de GitHub Actions. El horario de clase suma exámenes y PIN por alumno, y TFL Client encadena más de 250 commits hasta la v0.13.2.", ids: ["blazemc-status", "horario", "tflclient"] },
-  { date: "Nov 2026", title: "Un ecosistema cada vez más grande", text: "TFL Client supera los 325 commits, estrena su web oficial en Next.js (launcher.tflives.com), Astra Cloud lanza su landing de hosting para bots de Discord, llegan dos encargos más (el portafolio de LAKY y el staff ID de z_Mari4) y nace AulaSAI, un simulador de examen para mi propia clase de SMR.", ids: ["tflclient", "tflclient-web", "astra-cloud", "laky-portfolio", "mari4-portfolio", "sai-simulator"] }
+  { date: "Nov 2026", title: "Un ecosistema cada vez más grande", text: "TFL Client supera los 335 commits y llega a la v0.15.4, estrena su web oficial en Next.js (launcher.tflives.com) y Astra Cloud lanza su landing de hosting para bots de Discord. Llegan dos encargos más (el portafolio de LAKY y el staff ID de z_Mari4), nace AulaSAI para mi clase de SMR, y pruebo dos conceptos de hosting con enfoque sostenible: Recicla Host y GreenVox Nodes.", ids: ["tflclient", "tflclient-web", "astra-cloud", "laky-portfolio", "mari4-portfolio", "sai-simulator", "recicla-host", "greenvox-nodes", "pseint-guide"] }
 ];
 
 window.BLACKLIST = [
